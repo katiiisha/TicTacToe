@@ -1,7 +1,15 @@
 let area = document.getElementById('area');
 let cell = document.getElementsByClassName('cell');
+let currentPlayer = document.getElementById('curPlayer')
 
 let player = 'x';
+
+let stat = {
+    'x': 0,
+    'o': 0,
+    'd': 0
+};
+
 let winIndex = [
     [1, 2, 3],
     [4, 5, 6],
@@ -11,7 +19,7 @@ let winIndex = [
     [3, 6, 9],
     [1, 5, 9],
     [3, 5, 7],
-]
+];
 
 for (let i = 1; i <= 9; i++) { 
     area.innerHTML += "<div class='cell' pos=" + i + " ></div>";
@@ -34,10 +42,9 @@ function cellClick() {
             data.push(parseInt(cell[i].getAttribute('pos')));
         }
     }
-
-    console.log(data);
     
     if (CheckWin(data)) {
+        stat[player] += 1;
         restart('Выиграл:' + player)
     } else { 
         let draw = true;
@@ -47,11 +54,12 @@ function cellClick() {
             }
         }
         if (draw) { 
+            stat.d += 1;
             restart('ничья')
         }
     }
     player = player == 'x' ? 'o' : 'x';
-    
+    currentPlayer.innerHTML = player.toUpperCase();
 }
 
 function CheckWin(data) {
@@ -73,7 +81,15 @@ function CheckWin(data) {
 
 function restart(text) {
     alert(text);
-    for (let i =0; i <= cell.length; i++) {
+    updateStat();
+    for (let i =0 ; i <= cell.length; i++) {
         cell[i].innerHTML = '';
     }
+    
 }
+function updateStat() {
+    document.getElementById('sX').innerHTML = stat.x;
+    document.getElementById('sO').innerHTML = stat.o;
+    document.getElementById('sD').innerHTML = stat.d;
+}
+
