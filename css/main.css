@@ -1,5 +1,5 @@
 body {
-  background-color: aquamarine;
+  background-color: #000000;
   font-family: "Open Sans", sans-serif;
 }
 body .header {
@@ -12,31 +12,42 @@ body .header .title {
   font-weight: bold;
   font-style: italic;
   color: #000000;
-  -webkit-text-stroke: 2px #FFD56A;
-  text-shadow: 0 0 5px hsl(17deg, 100%, 50%), 0 0 10px #FF5100, 0 0 20px #EF4C01, 0 0 40px #EF4C01, 0 0 80px #EF4C01;
+  -webkit-text-stroke: 2px #ffd56a;
+  text-shadow: 0 0 5px hsl(17deg, 100%, 50%), 0 0 10px #ff5100, 0 0 20px #ef4c01, 0 0 40px #ef4c01, 0 0 80px #ef4c01;
+}
+body main {
+  color: #ef4c01;
 }
 body main .content {
   display: flex;
   margin: 100px 50px 50px 50px;
 }
 body main .content #area {
-  width: 156px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
   border: 1px solid white;
   margin: 0 auto;
   font-size: 0;
 }
 body main .content #area .cell {
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
   line-height: 50px;
   text-align: center;
   display: inline-block;
   font-size: 26px;
-  border: 1px solid white;
+  background-image: url(../img/Neon-border.svg);
+  background-size: contain;
   cursor: pointer;
   vertical-align: middle;
   transition: background 0.1s;
+  color: white;
+  transition: 0.3s;
 }
 body main .content #area .cell:hover {
-  background-color: antiquewhite;
+  transform: scale(1.05);
+  transition: 0.3s;
 }/*# sourceMappingURL=main.css.map */

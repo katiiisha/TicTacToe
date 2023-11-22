@@ -2,6 +2,8 @@ let area = document.getElementById('area');
 let cell = document.getElementsByClassName('cell');
 let currentPlayer = document.getElementById('curPlayer')
 
+
+
 let player = 'x';
 
 let stat = {
@@ -33,11 +35,13 @@ function cellClick() {
     if (!this.innerHTML) {
         this.innerHTML = player;
     } else { 
+        
         alert('ячейка занята')
+
         return;
     }
 
-    for (var i in cell) { 
+    for (let i in cell) { 
         if (cell[i].innerHTML == player) { 
             data.push(parseInt(cell[i].getAttribute('pos')));
         }

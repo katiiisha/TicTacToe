@@ -1,53 +1,59 @@
 body {
-    background-color: aquamarine;
-    font-family: 'Open Sans', sans-serif;
+  background-color: #000000;
+  font-family: "Open Sans", sans-serif;
 
-    .header {
+  .header {
     display: flex;
     justify-content: center;
-        .title {
-            text-transform: uppercase;
-            font-size: 54px; 
-            font-weight: bold;  
-            font-style: italic;
-            
-            color: #000000;
-            -webkit-text-stroke:2px #FFD56A;
-            text-shadow: 
-            0 0 5px hsl(17, 100%, 50%) , 
-            0 0 10px #FF5100, 
-            0 0 20px #EF4C01, 
-            0 0 40px #EF4C01, 
-            0 0 80px #EF4C01,   
-    }
-    }
+    .title {
+      text-transform: uppercase;
+      font-size: 54px;
+      font-weight: bold;
+      font-style: italic;
 
-    main {
-       .content {
-        display: flex;
-        margin: 100px 50px 50px 50px;
-            #area {
-                width: 156px;
-                border: 1px solid white;
-                margin: 0 auto;
-                font-size: 0;
-                .cell {
-                    width: 50px;
-                    height: 50px;
-                    line-height: 50px;
-                    text-align: center;
-                    display: inline-block;
-                    font-size: 26px;
-                    border: 1px solid white;
-                    cursor: pointer;
-                    vertical-align: middle;
-                    transition: background .1s;
-                        &:hover {
-                            background-color: antiquewhite;
-                        }
-                }
-
-            }
-       }
+      color: #000000;
+      -webkit-text-stroke: 2px #ffd56a;
+      text-shadow: 0 0 5px hsl(17, 100%, 50%), 0 0 10px #ff5100,
+        0 0 20px #ef4c01, 0 0 40px #ef4c01, 0 0 80px #ef4c01;
     }
+  }
+
+  main {
+    color: #ef4c01;
+    .content {
+      display: flex;
+      margin: 100px 50px 50px 50px;
+      #area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        border: 1px solid white;
+        margin: 0 auto;
+        font-size: 0;
+        .cell {
+            // margin: 121px;
+          width: 150px;
+          height: 150px;
+          line-height: 50px;
+          text-align: center;
+          display: inline-block;
+          font-size: 26px;
+          background-image: url(../img/Neon-border.svg);
+          background-size: contain;
+          cursor: pointer;
+          vertical-align: middle;
+          transition: background 0.1s;
+          color: white;
+          transition: 0.3s;
+          &:hover {
+            // background-color: antiquewhite;
+            transform: scale(1.05); 
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
 }
