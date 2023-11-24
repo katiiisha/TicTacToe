@@ -2,7 +2,8 @@ let area = document.getElementById('area');
 let cell = document.getElementsByClassName('cell');
 let currentPlayer = document.getElementById('curPlayer')
 
-let player = 'x';
+let player = 'player_x';
+
 
 let stat = {
     'x': 0,
@@ -29,67 +30,80 @@ for (let i = 0; i < cell.length; i++) {
 }
 function cellClick() {
     let data = [];
+    
 
-    if (!this.innerHTML) {
-        this.innerHTML = player;
-    } else { 
+    // Проверяем, есть ли у элемента класс "myClass"
+    if (!this.classList.contains(player)) {
+        this.classList.add(player);
+        let img = document.createElement("img"); // Создаем новый элемент <img>
+        img.src = `img/${player}.svg`; // Устанавливаем путь к изображению
+        this.appendChild(img); // Добавляем изображение к текущему элементу
+        console.log("Элемент имеет класс 'myClass'");
+    } else {
         alert('ячейка занята')
         return;
     }
 
-    for (var i in cell) { 
-        if (cell[i].innerHTML == player) { 
-            data.push(parseInt(cell[i].getAttribute('pos')));
-        }
-    }
+    // if (!this.innerHTML) {
+    //     this.innerHTML = player;
+    // } else { 
+    //     alert('ячейка занята')
+    //     return;
+    // }
+
+    // for (let i in cell) { 
+    //     if (cell[i].innerHTML == player) { 
+    //         data.push(parseInt(cell[i].getAttribute('pos')));
+    //     }
+    // }
     
-    if (CheckWin(data)) {
-        stat[player] += 1;
-        restart('Выиграл:' + player)
-    } else { 
-        let draw = true;
-        for (let i in cell) { 
-            if (cell[i].innerHTML == '') { 
-                draw = false;
-            }
-        }
-        if (draw) { 
-            stat.d += 1;
-            restart('ничья')
-        }
-    }
-    player = player == 'x' ? 'o' : 'x';
+    // if (CheckWin(data)) {
+    //     stat[player] += 1;
+    //     restart('Выиграл:' + player)
+    // } else { 
+    //     let draw = true;
+    //     for (let i in cell) { 
+    //         if (cell[i].innerHTML == '') { 
+    //             draw = false;
+    //         }
+    //     }
+    //     if (draw) { 
+    //         stat.d += 1;
+    //         restart('ничья')
+    //     }
+    // }
+    player = player == 'player_x' ? 'player_o' : 'player_x';
     currentPlayer.innerHTML = player.toUpperCase();
 }
 
-function CheckWin(data) {
-    for (let i in winIndex) { 
-        let win = true;
-        for (let j in winIndex[i]) {
-            let id = winIndex[i][j];
-            let ind = data.indexOf(id);
+    // function CheckWin(data) {
+    //     for (let i in winIndex) { 
+    //         let win = true;
+    //         for (let j in winIndex[i]) {
+    //             let id = winIndex[i][j];
+    //             let ind = data.indexOf(id);
 
-            if (ind == -1) {
-                win = false
-            }
-        }
+    //             if (ind == -1) {
+    //                 win = false
+    //             }
+    //         }
 
-        if (win) return true
-    }
-    return false
-}
+    //         if (win) return true
+    //     }
+    //     return false
+    // }
 
-function restart(text) {
-    alert(text);
-    updateStat();
-    for (let i =0 ; i <= cell.length; i++) {
-        cell[i].innerHTML = '';
-    }
-    
-}
-function updateStat() {
-    document.getElementById('sX').innerHTML = stat.x;
-    document.getElementById('sO').innerHTML = stat.o;
-    document.getElementById('sD').innerHTML = stat.d;
-}
+    // function restart(text) {
+    //     alert(text);
+    //     updateStat();
+    //     for (let i =0 ; i <= cell.length; i++) {
+    //         cell[i].innerHTML = '';
+    //     }
+        
+    // }
+    // function updateStat() {
+    //     document.getElementById('sX').innerHTML = stat.x;
+    //     document.getElementById('sO').innerHTML = stat.o;
+    //     document.getElementById('sD').innerHTML = stat.d;
+    // }
 
