@@ -61,18 +61,19 @@ function cellClick() {
     if (CheckWin(data)) {
         stat[player] += 1;
         restart('Выиграл:' + player)
-    }
-    //else { 
-        //      let draw = true;
-        //      for (let i in cell) {
-                
-        //      }
+    } else { 
+            let draw = true;
+            for (let i = 0; i < cell.length; i++) {
+            if (!cell[i].classList.contains('player_o') && !cell[i].classList.contains('player_x')) {
+                draw = false;
+            }
+            }
         
-        //     if (draw) {
-        //         stat.draw += 1;
-        //        restart('ничья')
-        //   }
-        // }
+            if (draw) {
+                stat.draw += 1;
+               restart('ничья')
+          }
+        }
     player = player == 'player_x' ? 'player_o' : 'player_x';
     currentPlayer.innerHTML = player.toUpperCase();
  
@@ -116,6 +117,11 @@ function CheckWin(data) {
         document.getElementById('sO').innerHTML = stat.player_o;
         document.getElementById('sD').innerHTML = stat.draw;
     }
+
+
+
+
+
 
 
 
