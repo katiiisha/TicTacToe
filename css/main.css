@@ -18,6 +18,9 @@ body .header .title {
 body main {
   color: #ef4c01;
 }
+body main {
+  color: #ef4c01;
+}
 body main .content {
   display: flex;
   margin: 100px 50px 50px 50px;

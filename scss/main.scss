@@ -10,15 +10,7 @@ body {
       font-size: 54px;
       font-weight: bold;
       font-style: italic;
-
-      color: #000000;
-      -webkit-text-stroke: 2px #ffd56a;
-      text-shadow: 0 0 5px hsl(17, 100%, 50%), 0 0 10px #ff5100,
-        0 0 20px #ef4c01, 0 0 40px #ef4c01, 0 0 80px #ef4c01;
-    }
-  }
-
-  main {
+     main {
     color: #ef4c01;
     .content {
       display: flex;
@@ -56,4 +48,6 @@ body {
       }
     }
   }
+}
+}
 }
