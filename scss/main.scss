@@ -22,32 +22,42 @@ body {
     }
     }
 
-    main {
-       .content {
-        display: flex;
-        margin: 100px 50px 50px 50px;
-            #area {
-                width: 156px;
-                border: 1px solid white;
-                margin: 0 auto;
-                font-size: 0;
-                .cell {
-                    width: 50px;
-                    height: 50px;
-                    line-height: 50px;
-                    text-align: center;
-                    display: inline-block;
-                    font-size: 26px;
-                    border: 1px solid white;
-                    cursor: pointer;
-                    vertical-align: middle;
-                    transition: background .1s;
-                        &:hover {
-                            background-color: antiquewhite;
-                        }
-                }
-
-            }
-       }
+     main {
+    color: #ef4c01;
+    .content {
+      display: flex;
+      margin: 100px 50px 50px 50px;
+      #area {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        border: 1px solid white;
+        margin: 0 auto;
+        font-size: 0;
+        .cell {
+            // margin: 121px;
+          width: 150px;
+          height: 150px;
+          line-height: 50px;
+          text-align: center;
+          display: inline-block;
+          font-size: 26px;
+          background-image: url(../img/Neon-border.svg);
+          background-size: contain;
+          cursor: pointer;
+          vertical-align: middle;
+          transition: background 0.1s;
+          color: white;
+          transition: 0.3s;
+          &:hover {
+            // background-color: antiquewhite;
+            transform: scale(1.05); 
+            transition: 0.3s;
+          }
+        }
+      }
     }
+  }
 }
