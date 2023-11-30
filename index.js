@@ -1,10 +1,8 @@
 let area = document.getElementById('area');
 let cell = document.getElementsByClassName('cell');
 let currentPlayer = document.getElementById('curPlayer');
-
-
-
 let player = 'player_x';
+
 currentPlayer.innerHTML = player.toUpperCase()  ;
 
 let stat = {
@@ -33,6 +31,7 @@ for (let i = 0; i < cell.length; i++) {
 
 function cellClick() {
     let data = [];
+
     if (!this.classList.contains('player_o') && !this.classList.contains('player_x')) {
         this.classList.add(player);
         let img = document.createElement("img"); 
@@ -48,34 +47,31 @@ function cellClick() {
         return;
     }
 
-
     for (let cellElement of cell) {
         if (cellElement.classList.contains(player)) {
             data.push(parseInt(cellElement.getAttribute('pos')));
         }
     }
 
-    
-    
     if (CheckWin(data)) {
         stat[player] += 1;
         restart('Выиграл:' + player)
     } else { 
-            let draw = true;
-            for (let i = 0; i < cell.length; i++) {
+        let draw = true;
+        for (let i = 0; i < cell.length; i++) {
             if (!cell[i].classList.contains('player_o') && !cell[i].classList.contains('player_x')) {
                 draw = false;
             }
-            }
-        
-            if (draw) {
-                stat.draw += 1;
-               restart('ничья')
-          }
         }
+        if (draw) {
+            stat.draw += 1;
+            restart('ничья')
+          }
+    }
+   
     player = player == 'player_x' ? 'player_o' : 'player_x';
     currentPlayer.innerHTML = player.toUpperCase();
- 
+    
    
 }
 
@@ -96,29 +92,27 @@ function CheckWin(data) {
     return false
 }
 
-    function restart(text) {
-        alert(text);
-        updateStat()
-        let images = document.getElementsByClassName('img-player');
-        
-        while (images.length > 0) {
+function restart(text) {
+    alert(text);
+    updateStat();
 
-            let parentCell = images[0].parentNode;
-            parentCell.removeChild(images[0]);
-            parentCell.classList.remove('player_x');
-            parentCell.classList.remove('player_o');
-            parentCell.style.backgroundImage = 'url(../img/Neon-border.svg';
-        }
+    let images = document.getElementsByClassName('img-player');
+    
+    while (images.length > 0) {
+        let parentCell = images[0].parentNode;
 
-    }
-    function updateStat() {
-        document.getElementById('sX').innerHTML = stat.player_x;
-        document.getElementById('sO').innerHTML = stat.player_o;
-        document.getElementById('sD').innerHTML = stat.draw;
+        parentCell.removeChild(images[0]);
+        parentCell.classList.remove('player_x');
+        parentCell.classList.remove('player_o');
+        parentCell.style.backgroundImage = 'url(../img/Neon-border.svg';
     }
 
-
-
+}
+function updateStat() {
+    document.getElementById('sX').innerHTML = stat.player_x;
+    document.getElementById('sO').innerHTML = stat.player_o;
+    document.getElementById('sD').innerHTML = stat.draw;
+}
 
 
 

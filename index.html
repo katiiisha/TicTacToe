@@ -14,40 +14,27 @@
     <header class="header">
         <h1 class="title"> Neon Tic-Tac-Toe</h1>
     </header>
-    <main>
-
-        <section class="content"> 
-            <section class="info">
-                <div class="currentPlauer">
-                    <span class="neonText">Now it's <span id="curPlayer"></span>  turn</span>
+    <main class="content">
+            <section class="statistics">
+                <div class="statCell"> 
+                    <span class="player">Player_X</span>
+                    <span id="sX" class="counter">0</span>
                 </div>
-
-                <div class="stat neonText">
-                    <table class="neonText">
-                        <th colspan="2" class="headerStat">Statistics</th>
-                        <tr>
-                            <td class="cellStat"><img src="img/icon_x.svg" alt="Player X"></td>
-                            <td "><span id="sX" class="cellText">0</span></td>
-                        </tr>
-                        <tr>
-                            <td class="cellStat"><img src="img/icon_o.svg" alt="Plaeyr O"></td>
-                            <td ><span id="sO" class="cellText">0</span></td>
-                        </tr>
-                        <tr>
-                            <td class="cellStat">
-                                <img src="img/icon_x.svg" alt="">
-                                <img src="img/icon_o.svg" alt="">
-                            </td>
-                            <td class="cellStat"><span id="sD" class="cellText">0</span></td>
-                        </tr>
-                    </table>
+                <div class="statCell"> 
+                    <span class="player">Player_O</span>
+                    <span id="sO" class="counter">0</span>
                 </div>
-
-            </section> 
-
+                <div class="statCell"> 
+                    <span class="player">Draw</span>
+                    <span id="sD" class="counter">0</span>
+                </div>
+            </section>
             <section id="area"></section>
-
-        </section>
+            <section class="currentPlauer">
+                    <span class="neonText">Now it's 
+                        <span id="curPlayer">
+                    </span>  turn</span>
+            </section>
     </main>
     <script src="index.js"></script>
 </body>

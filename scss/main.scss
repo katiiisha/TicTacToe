@@ -5,6 +5,7 @@ body {
   .header {
     display: flex;
     justify-content: center;
+    
     .title {
       text-transform: uppercase;
       font-size: 54px;
@@ -17,58 +18,41 @@ body {
     }
   }
   main {
-    color: #ef4c01;
-    .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+    .statistics {
       display: flex;
-      flex-direction: column; 
-      .currentPlauer {
-        width: 200px;
-        .neonText {
-        
-        text-shadow: 0 0 5px hsl(17, 100%, 50%), 0 0 10px #ff5100,
+      width: 622px;
+      justify-content: space-evenly;
+      
+      .statCell {
+        width: 150px;
+        height: 110px;
+        background-color: #383534d0;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .player {
+          font-size: 20px;
         }
-      }
-      .stat {
-        .neonText {
-          .headerStat {
-           color: white;
-           
-          //  text-shadow: 0 0 7px #ffd56a, 0 0 8px #ffd56a;
-            //  -webkit-text-stroke: 1px #ffd56a;
-            font-size: 64px;
-            font-size: 42px;
-            // border-bottom: 2px solid white;
+        .counter{
+            font-size: 55px;
           }
-          .cellStat {
-            text-align: center;
-            // border-right: 2px solid white;
-            padding: 0;
-            // font-size: 64px;
-            
-          
-          }
-         .cellText {
-              color: white;
-             
-              text-align: center;
-              font-size: 64px;
-              width: 64px;
-              display: block;
-            }
-        }
       }
     }
-    .content {
-      display: flex;
-      margin: 100px 50px 50px 50px;
-     
-      #area {
+
+    #area {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
         align-items: center;
         justify-items: center;  
-        margin: 0 auto;
         font-size: 0;
         background-image: url(../img/lines.svg);
         background-repeat: no-repeat;
@@ -94,7 +78,24 @@ body {
             transition: 0.3s;
           }
         }
+    }
+
+    .currentPlauer {
+      .neonText {
+        font-size: 25px;
+        color: white;
+        #curPlayer {
+          color: #ff5100;
+           text-shadow:  
+            0 0 10px #ff5100,
+            0 0 20px #ef4c01, 
+            0 0 40px #ef4c01, 
+            0 0 80px #ef4c01;
+    
+        }
       }
     }
+
+    }
   }
-}
+
