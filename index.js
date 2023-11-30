@@ -1,11 +1,11 @@
 let area = document.getElementById('area');
 let cell = document.getElementsByClassName('cell');
-let currentPlayer = document.getElementById('curPlayer')
+let currentPlayer = document.getElementById('curPlayer');
 
 
 
 let player = 'player_x';
-
+currentPlayer.innerHTML = player.toUpperCase()  ;
 
 let stat = {
     'player_x': 0,
@@ -33,7 +33,7 @@ for (let i = 0; i < cell.length; i++) {
 
 function cellClick() {
     let data = [];
-    if (!this.classList.contains(player)) {
+    if (!this.classList.contains('player_o') && !this.classList.contains('player_x')) {
         this.classList.add(player);
         let img = document.createElement("img"); 
         img.src = `img/${player}.svg`; 

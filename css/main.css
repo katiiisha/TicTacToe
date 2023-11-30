@@ -18,8 +18,31 @@ body .header .title {
 body main {
   color: #ef4c01;
 }
-body main {
-  color: #ef4c01;
+body main .info {
+  display: flex;
+  flex-direction: column;
+}
+body main .info .currentPlauer {
+  width: 200px;
+}
+body main .info .currentPlauer .neonText {
+  text-shadow: 0 0 5px hsl(17deg, 100%, 50%), 0 0 10px #ff5100;
+}
+body main .info .stat .neonText .headerStat {
+  color: white;
+  font-size: 64px;
+  font-size: 42px;
+}
+body main .info .stat .neonText .cellStat {
+  text-align: center;
+  padding: 0;
+}
+body main .info .stat .neonText .cellText {
+  color: white;
+  text-align: center;
+  font-size: 64px;
+  width: 64px;
+  display: block;
 }
 body main .content {
   display: flex;
@@ -31,13 +54,17 @@ body main .content #area {
   grid-template-rows: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
-  border: 1px solid white;
   margin: 0 auto;
   font-size: 0;
+  background-image: url(../img/lines.svg);
+  background-repeat: no-repeat;
+  padding: 20px;
+  background-position: center center;
 }
 body main .content #area .cell {
   width: 150px;
   height: 150px;
+  margin: 22px;
   line-height: 50px;
   text-align: center;
   display: inline-block;

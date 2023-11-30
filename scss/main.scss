@@ -10,24 +10,74 @@ body {
       font-size: 54px;
       font-weight: bold;
       font-style: italic;
-     main {
+      color: #000000;
+      -webkit-text-stroke: 2px #ffd56a;
+      text-shadow: 0 0 5px hsl(17, 100%, 50%), 0 0 10px #ff5100,
+        0 0 20px #ef4c01, 0 0 40px #ef4c01, 0 0 80px #ef4c01;
+    }
+  }
+  main {
     color: #ef4c01;
+    .info {
+      display: flex;
+      flex-direction: column; 
+      .currentPlauer {
+        width: 200px;
+        .neonText {
+        
+        text-shadow: 0 0 5px hsl(17, 100%, 50%), 0 0 10px #ff5100,
+        }
+      }
+      .stat {
+        .neonText {
+          .headerStat {
+           color: white;
+           
+          //  text-shadow: 0 0 7px #ffd56a, 0 0 8px #ffd56a;
+            //  -webkit-text-stroke: 1px #ffd56a;
+            font-size: 64px;
+            font-size: 42px;
+            // border-bottom: 2px solid white;
+          }
+          .cellStat {
+            text-align: center;
+            // border-right: 2px solid white;
+            padding: 0;
+            // font-size: 64px;
+            
+          
+          }
+         .cellText {
+              color: white;
+             
+              text-align: center;
+              font-size: 64px;
+              width: 64px;
+              display: block;
+            }
+        }
+      }
+    }
     .content {
       display: flex;
       margin: 100px 50px 50px 50px;
+     
       #area {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
         align-items: center;
-        justify-items: center;
-        border: 1px solid white;
+        justify-items: center;  
         margin: 0 auto;
         font-size: 0;
+        background-image: url(../img/lines.svg);
+        background-repeat: no-repeat;
+        padding: 20px;
+        background-position: center center  ;
         .cell {
-            // margin: 121px;
           width: 150px;
           height: 150px;
+          margin: 22px;
           line-height: 50px;
           text-align: center;
           display: inline-block;
@@ -40,7 +90,6 @@ body {
           color: white;
           transition: 0.3s;
           &:hover {
-            // background-color: antiquewhite;
             transform: scale(1.05); 
             transition: 0.3s;
           }
@@ -48,6 +97,4 @@ body {
       }
     }
   }
-}
-}
 }

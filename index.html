@@ -15,37 +15,40 @@
         <h1 class="title"> Neon Tic-Tac-Toe</h1>
     </header>
     <main>
-        <div class="content">
-            <div class="currentPlauer">
-                <span>Сейчас ходит: <span id="curPlayer"></span></span>
-            </div>
-            <div id="area"> </div>
-            
 
-            <div class="stat">
+        <section class="content"> 
+            <section class="info">
+                <div class="currentPlauer">
+                    <span class="neonText">Now it's <span id="curPlayer"></span>  turn</span>
+                </div>
 
-                <table>
-                    <th colspan="2">Статистика</th>
-                    <tr>
-                        <td>X</td>
-                        <td><span id="sX">0</span></td>
-                    </tr>
-                    <tr>
-                        <td>O</td>
-                        <td><span id="sO">0</span></td>
-                    </tr>
-                    <tr>
-                        <td>Ничьи</td>
-                        <td><span id="sD">0</span></td>
-                    </tr>
-                </table>
-                
-            </div>
-            
+                <div class="stat neonText">
+                    <table class="neonText">
+                        <th colspan="2" class="headerStat">Statistics</th>
+                        <tr>
+                            <td class="cellStat"><img src="img/icon_x.svg" alt="Player X"></td>
+                            <td "><span id="sX" class="cellText">0</span></td>
+                        </tr>
+                        <tr>
+                            <td class="cellStat"><img src="img/icon_o.svg" alt="Plaeyr O"></td>
+                            <td ><span id="sO" class="cellText">0</span></td>
+                        </tr>
+                        <tr>
+                            <td class="cellStat">
+                                <img src="img/icon_x.svg" alt="">
+                                <img src="img/icon_o.svg" alt="">
+                            </td>
+                            <td class="cellStat"><span id="sD" class="cellText">0</span></td>
+                        </tr>
+                    </table>
+                </div>
 
-        </div>
+            </section> 
+
+            <section id="area"></section>
+
+        </section>
     </main>
-    <img src="img/circle.svg" >
     <script src="index.js"></script>
 </body>
 </html>
