@@ -104,7 +104,7 @@ function restart(text) {
         parentCell.removeChild(images[0]);
         parentCell.classList.remove('player_x');
         parentCell.classList.remove('player_o');
-        parentCell.style.backgroundImage = 'url(../img/Neon-border.svg';
+        parentCell.style.backgroundImage = 'url(img/Neon-border.svg';
     }
 
 }
